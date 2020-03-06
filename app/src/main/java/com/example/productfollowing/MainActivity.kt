@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        if (savedInstanceState == null) {
+            bottomNavigation?.showBadge(R.id.action_home)
+            bottomNavigation?.showBadge(R.id.action_activity, 32)
+        }
+        bottomNavigation?.setItemSelected(R.id.action_home)
         loadFragment(HomeFragment())
 
     }

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">PRODUCT FOLLOWING</string>
-    <string name="menu_home">Home</string>
+    <string name="str_home_title">Home</string>
 </resources>
