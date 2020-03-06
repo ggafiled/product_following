@@ -10,7 +10,6 @@
         app:mt_speechMode="true"
         app:mt_hint="Typing your devices ..."
         app:mt_maxSuggestionsCount="10"
-        app:mt_borderlessRippleEnabled="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
