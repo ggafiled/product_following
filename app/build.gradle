@@ -75,4 +75,8 @@ dependencies {
 
     //Bottom Navigation
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.2.0'
+
+    //Toolbar
+    compile 'com.github.yalantis:jellytoolbar:v1.0'
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.5'
 }
