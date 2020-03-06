@@ -21,6 +21,8 @@
             android:layout_gravity="bottom"
             android:background="@drawable/button_toolbar_background"
             app:cnb_menuResource="@menu/main_toolbar_menu"
+            app:cnb_addRightInset="@dimen/addRightInset"
+            android:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </FrameLayout>
