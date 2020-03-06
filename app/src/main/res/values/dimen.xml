@@ -3,4 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="addRightInset">6dp</dimen>
+    <dimen name="addLeftInset">6dp</dimen>
+    <dimen name="addTopInset">6dp</dimen>
+    <dimen name="addBottomInset">6dp</dimen>
 </resources>
