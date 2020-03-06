@@ -12,7 +12,6 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 class MainActivity : AppCompatActivity() {
 
     private var bottomNavigation: ChipNavigationBar? = null
-    private var lastColor: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +27,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_favorites -> {
                     loadFragment(FavoritiesFragment())
                 }
+                R.id.action_me -> {
+                    loadFragment(MeFragment())
+                }
+                R.id.action_activity -> {
+                    loadFragment(ActivitiesFragment())
+                }
             }
         }
+        loadFragment(HomeFragment())
 
     }
 
