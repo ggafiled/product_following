@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166142960391",
+    "firebase_url": "https://product-following.firebaseio.com",
+    "project_id": "product-following",
+    "storage_bucket": "product-following.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166142960391:android:5e5ec60f40eee96b575ba2",
+        "android_client_info": {
+          "package_name": "com.example.productfollowing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166142960391-n3m2c9bkueuh0e0pogim4g117mu5gmaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMVZpwAXXKwugh3yBQE_VL2MFWzRtDqtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166142960391-n3m2c9bkueuh0e0pogim4g117mu5gmaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
