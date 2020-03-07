@@ -3,21 +3,21 @@
     <item
         android:id="@+id/action_home"
         android:icon="@drawable/ic_home"
-        android:title="Home"
+        android:title="หน้าหลัก"
         app:cnb_iconColor="@color/home"/>
     <item
         android:id="@+id/action_activity"
         android:icon="@drawable/ic_activity"
-        android:title="Activity"
+        android:title="อุปกรณ์"
         app:cnb_iconColor="@color/activity"/>
     <item
         android:id="@+id/action_favorites"
         android:icon="@drawable/ic_favorities"
-        android:title="Favorites"
+        android:title="คลังข้อมูล"
         app:cnb_iconColor="@color/favorites" />
     <item
         android:id="@+id/action_me"
         android:icon="@drawable/ic_me"
-        android:title="Settings"
+        android:title="โปรไฟล์"
         app:cnb_iconColor="@color/me" />
 </menu>

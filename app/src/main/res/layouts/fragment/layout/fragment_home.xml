@@ -1,29 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.arlib.floatingsearchview.FloatingSearchView
             android:id="@+id/floating_search_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:floatingSearch_searchBarMarginLeft="@dimen/activity_horizontal_margin"
-            app:floatingSearch_searchBarMarginTop="@dimen/activity_horizontal_margin"
-            app:floatingSearch_searchBarMarginRight="@dimen/activity_horizontal_margin"
-            app:floatingSearch_searchHint="@string/str_home_fragment_toolbar_hint"
-            app:floatingSearch_suggestionsListAnimDuration="250"
-            app:floatingSearch_showSearchKey="false"
+            android:layout_height="match_parent"
+            app:floatingSearch_close_search_on_keyboard_dismiss="true"
             app:floatingSearch_leftActionMode="showHamburger"
+            android:fontFamily="@font/thsarabun"
             app:floatingSearch_menu="@menu/home_fragment_toolbar_menu"
-            app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
+            app:floatingSearch_searchBarMarginLeft="@dimen/activity_horizontal_margin"
+            app:floatingSearch_searchBarMarginRight="@dimen/activity_horizontal_margin"
+            app:floatingSearch_searchBarMarginTop="@dimen/activity_horizontal_margin"
+            app:floatingSearch_searchHint="@string/str_home_fragment_toolbar_hint"
+            app:floatingSearch_showSearchKey="false"
+            app:floatingSearch_suggestionsListAnimDuration="250" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation = "vertical"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+            tools:context=".MainActivity">
 
-    </androidx.recyclerview.widget.RecyclerView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout  >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="34dp"
+                android:paddingBottom="70dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

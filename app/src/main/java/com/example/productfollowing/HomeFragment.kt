@@ -14,60 +14,45 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 class HomeFragment: Fragment() {
 
-    private val floating_search_view: FloatingSearchView? = null
+    private var floating_search_view: FloatingSearchView? = null
     private var bottomNavigation: ChipNavigationBar? = null
     private lateinit var recyclerView: RecyclerView
     var mennuAdapter: HomeFragmentMenuAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home,container,false)
-        val v: View = inflater.inflate(R.layout.activity_main, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         bottomNavigation = view?.findViewById(R.id.bottom_navigation)
-        recyclerView = view!!.findViewById(R.id.recycler_view)
         floating_search_view = view?.findViewById(R.id.floating_search_view)
         floating_search_view?.setOnQueryChangeListener(OnQueryChangeListener { oldQuery, newQuery ->
             //get suggestions based on newQuery
             //pass them on to the search view
         })
-        val menuList: ArrayList<MenuModel>
-        menuList.add(MenuModel(0,"Devices1",R.id.action_home))
-        menuList.add(MenuModel(1,"Devices2",R.id.action_home))
-        menuList.add(MenuModel(2,"Devices3",R.id.action_home))
-        menuList.add(MenuModel(3,"Devices4",R.id.action_home))
-        menuList.add(MenuModel(4,"Devices5",R.id.action_home))
-        menuList.add(MenuModel(5,"Devices6",R.id.action_home))
-        menuList.add(MenuModel(6,"Devices7",R.id.action_home))
-        menuList.add(MenuModel(7,"Devices8",R.id.action_home))
-        menuList.add(MenuModel(8,"Devices9",R.id.action_home))
+        var menuList: ArrayList<MenuModel> = arrayListOf()
+        menuList.add(MenuModel(0,"เพิ่มรายการอุปกรณ์",R.drawable.add))
+        menuList.add(MenuModel(1,"อุปกรณ์",R.drawable.devices))
+        menuList.add(MenuModel(2,"รายการรออนุมัติ",R.drawable.order_list))
+        menuList.add(MenuModel(3,"ตรวจสอบ",R.drawable.audit))
+        menuList.add(MenuModel(4,"โอนรายการยืม",R.drawable.transfer))
+        menuList.add(MenuModel(5,"คืนอุปกรณ์",R.drawable.return_devices))
+        menuList.add(MenuModel(6,"รายการขอเบิก",R.drawable.request))
+        menuList.add(MenuModel(7,"แจ้งซ่อม",R.drawable.fix))
+        menuList.add(MenuModel(8,"จำหน่ายอุปกรณ์ออก",R.drawable.release))
 
-        mennuAdapter = HomeFragmentMenuAdapter(menuList)
-        mennuAdapter?.notifyDataSetChanged()
-
-        val llm = LinearLayoutManager(activity)
-        llm.orientation = LinearLayoutManager.VERTICAL
-        recyclerView.setLayoutManager(llm)
+        recyclerView = view!!.findViewById(R.id.recycler_view)
+        val manager = LinearLayoutManager(context)
+        recyclerView.layoutManager = manager
+        recyclerView.setHasFixedSize(true)
+        mennuAdapter = HomeFragmentMenuAdapter(menuList!!)
         recyclerView.adapter = mennuAdapter
-
-
     }
 
     override fun onResume() {
         super.onResume()
         bottomNavigation?.setItemSelected(R.id.action_home)
-    }
-
-    fun createMenuForGeneral(): ArrayList<MenuModel>? {
-        var menuList: ArrayList<MenuModel>? = null
-        menuList?.add(MenuModel(0,"Devices1",R.id.action_home))
-        menuList?.add(MenuModel(1,"Devices2",R.id.action_home))
-        menuList?.add(MenuModel(2,"Devices3",R.id.action_home))
-        menuList?.add(MenuModel(3,"Devices4",R.id.action_home))
-        menuList?.add(MenuModel(4,"Devices5",R.id.action_home))
-        menuList?.add(MenuModel(5,"Devices6",R.id.action_home))
-        menuList?.add(MenuModel(6,"Devices7",R.id.action_home))
-        menuList?.add(MenuModel(7,"Devices8",R.id.action_home))
-        menuList?.add(MenuModel(8,"Devices9",R.id.action_home))
-        return menuList
     }
 
 }
